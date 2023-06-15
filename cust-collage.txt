@@ -1,0 +1,45 @@
+<section class="cust-collage">
+  <div class="container">
+    <div class="row" style="display:flex;">
+      <div class="col-1">
+        {% for block in section.blocks %}
+        {% render 'card-collection', card_collection: block.settings.collection1 %}
+         {% render 'card-product',card_product: block.settings.product-1 %}
+          {% endfor %}
+      </div>
+      <div class="col-2">
+        <div class="col-21" style="display:flex;">
+           {% for block in section.blocks %}
+        {% render 'card-collection', card_collection: block.settings.collection2 %}
+         {% render 'card-product',card_product: block.settings.product-2 %}
+          {% endfor %}
+        </div>
+        <div class="col-22">
+          {% for block in section.blocks %}
+        {% render 'card-collection', card_collection: block.settings.collection3 %}
+         {% render 'card-product',card_product: block.settings.product-3 %}
+          {% endfor %}
+        </div>
+      </div>
+     
+    </div>
+  </div>
+  </section>
+{% schema %}
+  {
+  "name": "Multiple Blocks",
+    "blocks":[
+      {
+        "type": "block-1",
+        "name": "Block 1",
+        "settings": [
+          {
+      "type": "collection",
+      "id": "collection1",
+      "label": "collection"
+    },
+          {
+"id": "product-1",
+"type": "product",
+"label": "product"
+}
